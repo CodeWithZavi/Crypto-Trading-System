@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crypto-dark: #0b0e11;
+  --color-crypto-light: #1e2329;
+  --color-crypto-accent: #fcd535;
+  --color-crypto-green: #0ecb81;
+  --color-crypto-red: #f6465d;
+  --color-crypto-gray: #848e9c;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-crypto-dark);
+  color: white;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-crypto-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b3139;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #474d57;
+}
+
+/* 
+  Re-applying these as components/utilities is still valid.
+  The colors will resolve from the theme variables.
+*/
+.input-field {
+  @apply w-full bg-crypto-light border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-crypto-accent transition-colors;
+}
+
+.btn-primary {
+  @apply w-full bg-crypto-accent text-black font-bold py-3 px-4 rounded hover:bg-yellow-400 transition-colors;
+}
+
+.card {
+  @apply bg-crypto-light rounded-lg p-6 shadow-lg;
+}
